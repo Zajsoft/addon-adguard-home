@@ -68,9 +68,9 @@ for interface in "${interfaces[@]}"; do
         # fe80::/10 according to RFC 4193 -> Local link. Add interface to bind to
         if (( (fd == 254) && ( (a2 & 192) == 128) )); then
             hosts+=("${host%/*}%${interface}")
-        else
-            # Remove the netmask (for example /64) from the address
-            hosts+=("${host%/*}")
+        #else
+        #    # Remove the netmask (for example /64) from the address
+        #    hosts+=("${host%/*}")
         fi
     done
 
