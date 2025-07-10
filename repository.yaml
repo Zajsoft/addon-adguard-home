@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: AdGuard Home
+url: 'https://github.com/Zajsoft/addon-adguard-home'
+maintainer: Zajsoft <Zajsoft@Zajsoft.NET>
