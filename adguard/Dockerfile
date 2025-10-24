@@ -8,7 +8,7 @@ ARG BUILD_ARCH=amd64
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG ADGUARD_HOME_VERSION="v0.107.67"
+ARG ADGUARD_HOME_VERSION="v0.107.68"
 # hadolint ignore=DL3003,SC2155
 RUN \
     apk add --no-cache \
@@ -17,7 +17,6 @@ RUN \
     \
     && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="arm64"; fi \
     && if [[ "${BUILD_ARCH}" = "amd64" ]]; then ARCH="amd64"; fi \
-    && if [[ "${BUILD_ARCH}" = "armv7" ]]; then ARCH="armv7"; fi \
     \
     && curl -L -s \
         "https://github.com/AdguardTeam/AdGuardHome/releases/download/${ADGUARD_HOME_VERSION}/AdGuardHome_linux_${ARCH}.tar.gz" \
